@@ -14,12 +14,12 @@ import Paragraph from '../components/paragraph'
 import Section from '../components/section'
 import NextLink from 'next/link'
 import {
-  IoLogoTwitter,
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoDiscord,
   IoLogoLinkedin
 } from 'react-icons/io5'
+import { FiDownload } from 'react-icons/fi'
 const Page = () => {
   const copiedToClipboard = useToast()
 
@@ -108,6 +108,16 @@ const Page = () => {
             </Link>
           </ListItem>
         </List>
+      </Section>
+      <Section delay={0.9}>
+        <Heading as="h3" variant="section-title">
+          Resume
+        </Heading>
+        <Button leftIcon={<Icon as={FiDownload} />} background="transparent">
+          <Link variant="ghost" download href="/resume.pdf">
+            Download Resume
+          </Link>
+        </Button>
       </Section>
     </Container>
   )
